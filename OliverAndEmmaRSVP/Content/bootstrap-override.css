@@ -1,0 +1,67 @@
+﻿* {
+    font-family: 'Raleway', sans-serif !important;
+}
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col {
+    width:49%;
+    float:left !important;
+    box-sizing:border-box;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar {
+    background-color: transparent;
+    border: none;
+}
+
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+        color: black !important;
+    }
+
+        .navbar .navbar-nav :hover {
+            color: #bbb !important;
+        }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+        padding: 10px;
+    }
+
+.navbar-inverse .navbar-nav > li {
+    color: black;
+    letter-spacing: 5px;
+    font-size: 18px !important;
+}
+
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: black;
+    }
+
+.container .body-content {
+    text-align: center !important;
+}

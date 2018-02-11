@@ -1,0 +1,59 @@
+﻿@model OliverAndEmmaRSVP.Models.RSVP
+
+@{
+    ViewBag.Title = "Oliver & Emma";
+    ViewBag.Message = "ARE GETTING MARRIED";
+}
+<div class="title-container">
+    <div class="title">
+        <h1>@ViewBag.Title</h1>
+    </div>
+    <div class="sub-title">
+        <h5>@ViewBag.Message</h5>
+    </div>
+</div>
+
+<div class="rsvp-container">
+    <div class="title">
+        <h1>
+            Please RSVP by October 1, 2018
+        </h1>
+    </div>
+    @using (Html.BeginForm("FormPost", "Home", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="option-button">
+                <label>Number of guests?</label>
+                @Html.TextBoxFor(model => model.NumberOfGuests, null, new { @class = "form-control number-of-guests", type = "number", max = "5", min = "0", onkeydown = "return false", required="true" })
+            </div>
+        </div>
+        <div class="form">
+            <label>Your Name*</label>
+            <div class="form-row">
+                <div class="col" style="margin-right:1%;">
+                    @Html.TextBoxFor(model => model.FirstName, null, new { @class = "form-control", placeholder = "First Name", required = "true" })
+                </div>
+                <div class="col" style="margin-left:1%;">
+                    @Html.TextBoxFor(model => model.LastName, null, new { @class = "form-control", placeholder = "Last Name", required = "true" })
+                </div>
+            </div>
+        </div>
+        <div class="form" style="margin-top: 7vh;">
+            <label>E-Mail*</label>
+            <div class="form-row">
+                @Html.EditorFor(model => model.EMail, new { htmlAttributes = new { @class = "form-control", required = "true" } })
+            </div>
+        </div>
+        <div class="form" style="margin-top: 3vh;">
+            <label>Any Questions</label>
+            <div class="form-row">
+                @Html.TextBoxFor(model => model.Questions, null, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="option-button">
+                <button type="submit" class="form-control" style="width:100px !important;">Submit</button>
+            </div>
+        </div>
+    }
+</div>

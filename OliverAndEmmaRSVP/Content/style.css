@@ -1,0 +1,72 @@
+﻿.title-container {
+    text-align: center;
+}
+
+    .title-container .title {
+        margin-top: 9vh;
+    }
+
+        .title-container .title h1 {
+            font-size: 75px;
+            letter-spacing: 5px;
+        }
+
+    .title-container .sub-title {
+    }
+
+        .title-container .sub-title h5 {
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+.rsvp-container {
+    margin-top: 7vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    min-height: 57vh;
+    height: auto;
+    width: 75%;
+    box-shadow: 0 0 10px #eee;
+    background-color: white;
+    padding: 50px;
+}
+
+    .rsvp-container .number-of-guests {
+        width: 100px !important;
+    }
+
+    .rsvp-container .title h1 {
+        font-size: 25px;
+    }
+
+    .rsvp-container .option-button {
+        margin-top: 3vh;
+        text-align: center !important;
+    }
+
+        .rsvp-container .option-button .form-control {
+            margin: 0 auto;
+            float: none;
+        }
+
+
+    .rsvp-container .form {
+        margin-top: 2vh;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+        .rsvp-container .form .full-width {
+            width: 100% !important;
+            max-width: none;
+        }
+
+    .rsvp-container input {
+        border-radius: 0;
+        box-shadow: none;
+        outline: none !important;
+        width: 100% !important;
+        transition: none;
+        max-width: none;
+    }
