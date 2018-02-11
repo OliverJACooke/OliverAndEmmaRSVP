@@ -1,8 +1,5 @@
 ﻿using OliverAndEmmaRSVP.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace OliverAndEmmaRSVP.Controllers
@@ -17,38 +14,28 @@ namespace OliverAndEmmaRSVP.Controllers
         [HttpPost]
         public ActionResult FormPost(RSVP rsvp)
         {
-            try
+            Boolean valid = false;
+
+            if (ModelState.IsValid)
+                valid = true;
+
+            using (DatabaseContext context = new DatabaseContext())
             {
-
-                Boolean valid = false;
-
-                if (ModelState.IsValid)
-                    valid = true;
-
-                using (DatabaseContext context = new DatabaseContext())
+                Data.Entity.RSVPEntity entity = new Data.Entity.RSVPEntity
                 {
-                    Data.Entity.RSVPEntity entity = new Data.Entity.RSVPEntity
-                    {
-                        Id = Guid.NewGuid(),
-                        NumberOfGuests = rsvp.NumberOfGuests,
-                        FirstName = rsvp.FirstName,
-                        LastName = rsvp.LastName,
-                        EMail = rsvp.EMail,
-                        Questions = rsvp.Questions
-                    };
+                    Id = Guid.NewGuid(),
+                    NumberOfGuests = rsvp.NumberOfGuests,
+                    FirstName = rsvp.FirstName,
+                    LastName = rsvp.LastName,
+                    EMail = rsvp.EMail,
+                    Questions = rsvp.Questions
+                };
 
-                    context.RSVP.Add(entity);
-                    context.SaveChanges();
-                }
-
-                return View("Thanks");
-
+                context.RSVP.Add(entity);
+                context.SaveChanges();
             }
-            catch (Exception ex)
-            {
-                string test = "test";
-                throw;
-            }
+
+            return View("Thanks");
         }
     }
 }

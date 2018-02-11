@@ -1,4 +1,17 @@
-﻿.title-container {
+﻿.flower-background {
+    position: absolute;
+    z-index: -1;
+    padding-left: 23%;
+    transform:rotate(90deg);
+    top: -120px;
+}
+
+    .flower-background img {
+        display: block;
+        height: 450px;
+    }
+
+.title-container {
     text-align: center;
 }
 
